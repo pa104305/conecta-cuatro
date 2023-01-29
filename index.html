@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cuatro en raya</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--<div class="tablero"><!---section tablero
+            <div class="esp" id="thirtySix"onclick="seleccionar(id);"></div><div class="esp" id="thirtySeven"onclick="seleccionar(id);"></div><div class="esp" id="thirtyEight"onclick="seleccionar(id);"></div><div class="esp" id="thirtyNine"onclick="seleccionar(id);"></div><div class="esp" id="fourty"onclick="seleccionar(id);"></div><div class="esp" id="fortyOne"onclick="seleccionar(id);"></div><div class="esp" id="fortyTwo"onclick="seleccionar(id);"></div>
+            <div class="esp" id="twentyNine"onclick="seleccionar(id);"></div><div class="esp" id="thirty"onclick="seleccionar(id);"></div><div class="esp" id="thirtyOne"onclick="seleccionar(id);"></div><div class="esp" id="thirtyTwo"onclick="seleccionar(id);"></div><div class="esp" id="thirtyThree"onclick="seleccionar(id);"></div><div class="esp" id="thirtyFour"onclick="seleccionar(id);"></div><div class="esp" id="thirtyFive"onclick="seleccionar(id);"></div>
+            <div class="esp" id="twentyTwo"onclick="seleccionar(id);"></div><div class="esp" id="twentyThree"onclick="seleccionar(id);"></div><div class="esp" id="twentyFour"onclick="seleccionar(id);"></div><div class="esp" id="twentyFive"onclick="seleccionar(id);"></div><div class="esp" id="twentySix"onclick="seleccionar(id);"></div><div class="esp" id="twentySeven"onclick="seleccionar(id);"></div><div class="esp" id="twentyEight"onclick="seleccionar(id);"></div>
+            <div class="esp" id="fiveteen"onclick="seleccionar(id);"></div><div class="esp" id="sixteen"onclick="seleccionar(id);"></div><div class="esp" id="seventeen"onclick="seleccionar(id);"></div><div class="esp" id="eighteen"onclick="seleccionar(id);"></div><div class="esp" id="nineteen"onclick="seleccionar(id);"></div><div class="esp" id="twenty"onclick="seleccionar(id);"></div><div class="esp" id="twentyOne" onclick="seleccionar(id);"></div>
+            <div class="esp" id="eight"onclick="seleccionar(id);"></div><div class="esp" id="nine"onclick="seleccionar(id);"></div><div class="esp" id="ten"onclick="seleccionar(id);"></div><div class="esp" id="eleven"onclick="seleccionar(id);"></div><div class="esp" id="twelve"onclick="seleccionar(id);"></div><div class="esp" id="thirteen"onclick="seleccionar(id);"></div><div class="esp" id="fourteen"onclick="seleccionar(id);"></div>
+            <div class="esp" id="one"onclick="seleccionar(id);"></div><div class="esp" id="two"onclick="seleccionar(id);"></div><div class="esp" id="three"onclick="seleccionar(id);"></div><div class="esp" id="four"onclick="seleccionar(id);"></div><div class="esp" id="five"onclick="seleccionar(id);"></div><div class="esp" id="six"onclick="seleccionar(id);"></div><div class="esp" id="seven"onclick="seleccionar(id);"></div>
+        </div>-->
+        <div class="tablero">
+            <div class="esp" id="36"onclick="seleccionar(id);"></div><div class="esp" id="37"onclick="seleccionar(id);"></div><div class="esp" id="38"onclick="seleccionar(id);"></div><div class="esp" id="39"onclick="seleccionar(id);"></div><div class="esp" id="40"onclick="seleccionar(id);"></div><div class="esp" id="41"onclick="seleccionar(id);"></div><div class="esp" id="42"onclick="seleccionar(id);"></div>
+            <div class="esp" id="29"onclick="seleccionar(id);"></div><div class="esp" id="30"onclick="seleccionar(id);"></div><div class="esp" id="31"onclick="seleccionar(id);"></div><div class="esp" id="32"onclick="seleccionar(id);"></div><div class="esp" id="33"onclick="seleccionar(id);"></div><div class="esp" id="34"onclick="seleccionar(id);"></div><div class="esp" id="35"onclick="seleccionar(id);"></div>
+            <div class="esp" id="22"onclick="seleccionar(id);"></div><div class="esp" id="23"onclick="seleccionar(id);"></div><div class="esp" id="24"onclick="seleccionar(id);"></div><div class="esp" id="25"onclick="seleccionar(id);"></div><div class="esp" id="26"onclick="seleccionar(id);"></div><div class="esp" id="27"onclick="seleccionar(id);"></div><div class="esp" id="28"onclick="seleccionar(id);"></div>
+            <div class="esp" id="15"onclick="seleccionar(id);"></div><div class="esp" id="16"onclick="seleccionar(id);"></div><div class="esp" id="17"onclick="seleccionar(id);"></div><div class="esp" id="18"onclick="seleccionar(id);"></div><div class="esp" id="19"onclick="seleccionar(id);"></div><div class="esp" id="20"onclick="seleccionar(id);"></div><div class="esp" id="21" onclick="seleccionar(id);"></div>
+            <div class="esp" id="8"onclick="seleccionar(id);"></div><div class="esp" id="9"onclick="seleccionar(id);"></div><div class="esp" id="10"onclick="seleccionar(id);"></div><div class="esp" id="11"onclick="seleccionar(id);"></div><div class="esp" id="12"onclick="seleccionar(id);"></div><div class="esp" id="13"onclick="seleccionar(id);"></div><div class="esp" id="14"onclick="seleccionar(id);"></div>
+            <div class="esp" id="1"onclick="seleccionar(id);"></div><div class="esp" id="2"onclick="seleccionar(id);"></div><div class="esp" id="3"onclick="seleccionar(id);"></div><div class="esp" id="4"onclick="seleccionar(id);"></div><div class="esp" id="5"onclick="seleccionar(id);"></div><div class="esp" id="6"onclick="seleccionar(id);"></div><div class="esp" id="7"onclick="seleccionar(id);"></div>
+        </div>
+        <aside class="menu">
+            <!--aside botones y contador-->
+            <div class="right">
+                <div class="btn" onclick="resetGame();"><button>reset</button></div>
+                <div class="btn" onclick="clearBoard()"><button>replay</button></div>
+                <div class="modified"><h1>Puntuación</h1></div>
+                <div id="rojos" class="icon"><div id="icon-red"><h1 id="punt1"></h1></div></div>
+                <div id="amarillos" class="icon"><div id="icon-yellow"><h1 id="punt2"></h1></div></div>
+            </div>
+        </aside>
+    </body>
+    <script src="./script.js"></script>
+</html>
