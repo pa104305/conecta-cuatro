@@ -23,6 +23,7 @@ body{
     position: relative;
     top: 5%;
     left: 3%;
+    border-radius: 15px;
 }
 
 .esp{
@@ -66,6 +67,7 @@ body{
     margin-bottom: 10px;
 }
 .btn{
+    border-radius: 10px;
     align-self: center;
     justify-self: center;
     margin-top: 15px;
@@ -76,14 +78,19 @@ body{
     align-items: center;
     justify-items: center;
 }
-.btn > button:hover{
-    border: 5px white solid;
+button:hover{
+    background: whitesmoke;
+    color: black;
+    transition: all 0.25s;
 }
-.btn > button{
+button{
     width: 50px;
     height: 25px;
     background: black;
     color: white;
+    border-radius: 7.5px;
+    border: white 1.5px solid;
+    transition: all 0.25s;
 }
     /*iconos de menu*/
     #icon-red{

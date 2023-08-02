@@ -68,16 +68,18 @@ function seleccionar(id){
 function initComprobation(){
     if(turnsGlobal > 6){
         console.log("Iniciando la comprobacion")
+        //!error en horizontal (Teoricamente solucionado, faltan las pruebas) NO ESTA RESUELTO :(; POR SEGUNDA VEZ PARECE ESTAR RESUELTO EL PROBLEMA
+        //!error en segundo diagonal (Teoricamente solucionado, faltan las pruebas)
         horizontal()
-        /*vertical()
+        vertical()
         diagonalOne()
-        diagonalTwo()*/
+        diagonalTwo()
     }
 }
 
-function horizontal(){
-    const initBase = [1, 8, 15, 22, 29, 36]
-    const stopBase = [7, 14, 21, 28, 35, 42]//4, 11, 18, 25, 32, 39
+/*function horizontal(){
+    const initBase = [1, 8, 15, 22, 29, 36, 4, 11, 18, 25, 32, 39]
+    const stopBase = [4, 11, 18, 25, 32, 39, 7, 14, 21, 28, 35, 42]
     for(space in initBase){
         let start = initBase[space]
         let stop = stopBase[space]
@@ -91,6 +93,51 @@ function horizontal(){
                 }else if(ids[start + count] == "yellow" && (ids[start + count + 1] == "yellow" || ids[start + count - 1] == "yellow")){
                     sameColorYellow++
                     comprobarCuatro(sameColorRed, sameColorYellow)
+                }
+            }else if(ids[start + count] == "free" && ((sameColorRed < 4 && sameColorRed > 0) || (sameColorYellow < 4 && sameColorYellow > 0))){
+                sameColorRed = 0
+                sameColorYellow = 0
+            }
+        }
+    }
+}*/
+function horizontal(){
+    const initBase = [1, 8, 15, 22, 29, 36]
+    const stopBase = [7, 14, 21, 28, 35, 42]
+    for(space in initBase){
+        let start = initBase[space]
+        let stop = stopBase[space]
+        let sameColorRed = 0
+        let sameColorYellow = 0
+        for(count = 0; count < 7; count++){
+            if(start + count <= stop && ids[start + count] != "free"){
+                if(sameColorRed == 0){
+                    if(ids[start + count] == "red" && ids[start + count + 1] == "red"){
+                        sameColorRed++
+                    }
+                }else if(sameColorRed == 3){
+                    if(ids[start + count] == "red" && ids[start + count - 1] == "red"){
+                        sameColorRed++
+                        comprobarCuatro(sameColorRed, sameColorYellow)
+                    }
+                }else if(sameColorRed == 1 || sameColorRed == 2){
+                    if(ids[start + count] == "red" && ids[start + count + 1] == "red" && ids[start + count - 1] == "red"){
+                        sameColorRed++
+                    }
+                }
+                if(sameColorYellow == 0){
+                    if(ids[start + count] == "yellow" && ids[start + count + 1] == "yellow"){
+                        sameColorYellow++
+                    }
+                }else if(sameColorYellow == 3){
+                    if(ids[start + count] == "yellow" && ids[start + count - 1] == "yellow"){
+                        sameColorYellow++
+                        comprobarCuatro(sameColorRed, sameColorYellow)
+                    }
+                }else if(sameColorYellow == 1 || sameColorYellow == 2){
+                    if(ids[start + count] == "yellow" && ids[start + count + 1] == "yellow" && ids[start + count - 1] == "yellow"){
+                        sameColorYellow++
+                    }
                 }
             }else if(ids[start + count] == "free" && ((sameColorRed < 4 && sameColorRed > 0) || (sameColorYellow < 4 && sameColorYellow > 0))){
                 sameColorRed = 0
@@ -151,7 +198,7 @@ function diagonalOne(){
 }
 
 function diagonalTwo(){
-    const initBase = [1, 2, 3, 4, 5, 6, 7]
+    const initBase = [4, 5, 6, 7]
     const stopBase = [36, 37, 38, 39, 40, 41, 42]
     for(space in initBase){
         let start = initBase[space]
